@@ -69,7 +69,7 @@ async def validate(request: Request):
 
 
 @router.post("/api/v1/terraform/import", summary="Import existing resource")
-async def import(request: Request):
+async def import_resource_route(request: Request):
     """Import existing resource"""
     body = await request.json() if request.method in ("POST", "PUT", "PATCH") else {}
     logger.info("import_called", params=list(body.keys()) if body else [])

@@ -8,7 +8,7 @@ from src.agent.tools import AgentTools
 async def test_generate_terraform():
     """Test Generate Terraform configuration from natural language."""
     tools = AgentTools()
-    result = await tools.generate_terraform(description="test", provider="test")
+    result = await tools.generate_terraform(description="vpc", provider="aws", module_style=True)
     assert result is not None
     assert "status" in result or "tool" in result
 
